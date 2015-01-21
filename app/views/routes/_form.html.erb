@@ -1,0 +1,44 @@
+<% provide(:title, 'Sign Up') %>
+<h1></h1>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+      
+      <%= form_for(@route) do |f| %>
+  <% if @route.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@route.errors.count, "error") %> prohibited this route from being saved:</h2>
+
+      <ul>
+      <% @route.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :origem %><br>
+    <%= f.text_field :origem, class: 'form-control' %>
+  </div>
+  <div class="field">
+    <%= f.label :destino %><br>
+    <%= f.text_field :destino, class: 'form-control' %>
+  </div>
+  <div class="field">
+    <%= f.label :data %><br>
+    <%= f.date_select :data, class: 'form-control' %>
+  </div>
+  <div class="field">
+    <%= f.label :tipo %><br>
+    <%= f.text_field :tipo, class: 'form-control' %>
+  </div>
+  <div class="field">
+    <%= f.label :obs %><br>
+    <%= f.text_field :obs, class: 'form-control' %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  <% end %>
+    </div>
+ </div>
+</div>

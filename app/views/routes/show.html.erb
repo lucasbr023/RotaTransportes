@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Origem:</strong>
+  <%= @route.origem %>
+</p>
+
+<p>
+  <strong>Destino:</strong>
+  <%= @route.destino %>
+</p>
+
+<p>
+  <strong>Data:</strong>
+  <%= @route.data %>
+</p>
+
+<p>
+  <strong>Tipo:</strong>
+  <%= @route.tipo %>
+</p>
+
+<p>
+  <strong>Obs:</strong>
+  <%= @route.obs %>
+</p>
+
+<%= link_to 'Seguir esta rota', static_pages_seguir_path(:route => @route.id) %> 
+
+
+<%= link_to 'Edit', edit_route_path(@route) %> |
+<%= link_to 'Deletar', destroy_route_path(@route) %> |
+
+
+<%= link_to 'Back', routes_path %>

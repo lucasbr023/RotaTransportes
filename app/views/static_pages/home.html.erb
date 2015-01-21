@@ -1,0 +1,27 @@
+<% if logged_in? %>
+<br>
+testando
+
+<% else%>
+<!DOCTYPE html>
+<html>
+  <head>
+     <title><%= yield(:title) %> | Home | Rotas Community</title>
+  </head>
+  <body>
+      <br>
+      <br>
+      <br><br>
+    <h1>Rotas Community</h1>
+    <p>
+     <br>
+        <br>
+        Essa é a página incial do sistema Rotas.
+    </p>
+      <br>
+      
+  <%= link_to "Sign up now!", signup_path , class: "btn btn-lg btn-primary" %>
+</div>
+  </body>
+</html>
+<% end %>
