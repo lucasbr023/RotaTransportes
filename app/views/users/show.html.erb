@@ -17,16 +17,29 @@
 <% if @user.routes.any? %>
 
       <h3>Minhas rotas (<%= @user.routes.count %>)</h3>
+      <p>_________________________________________________________________</p>
       <br>
 <p>
     <ul class="routes">
 
           <% @user.routes.each do |route| %>
     
-          <li><%= "#{route.origem} - #{route.destino} - #{route.tipo} - #{route.data} - #{route.obs}" %> </li>
+          <li>
+            <p><%= "Origem: #{route.origem} "%></p>
+            <p><%= "Destino: #{route.destino} "%></p>
+            <p><%= "Tipo: #{route.tipo}"%></p>
+            <p><%= "Data: #{route.data} "%></p>
+            <p><%= "Observações: #{route.obs} "%></p>
+            <p><%= "Situação do Pagamento: #{route.pagamento} "%></p>
+            <p>_________________________________________________________________ </p>
+          </li>
             </ul>
+            
+
     <% end %>
+
     <% end %>
+   
    </p>  
               </div>
 

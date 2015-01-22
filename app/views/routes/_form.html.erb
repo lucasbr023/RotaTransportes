@@ -36,6 +36,12 @@
     <%= f.label :obs %><br>
     <%= f.text_field :obs, class: 'form-control' %>
   </div>
+     <% if current_user.admin? %>
+
+     <%= select("route", "pagamento", ['Esperando','Pago'], {include_blank: "Situação do pagamento"}) %>
+     <% end %>
+  
+  
   <div class="actions">
     <%= f.submit %>
   <% end %>
