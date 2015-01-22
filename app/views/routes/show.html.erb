@@ -28,8 +28,9 @@
 <%= link_to 'Seguir esta rota', static_pages_seguir_path(:route => @route.id) %> 
 
 
+<% if current_user.admin? %>
 <%= link_to 'Edit', edit_route_path(@route) %> |
-S
+<% end %>
 
 
 <%= link_to 'Back', routes_path %>

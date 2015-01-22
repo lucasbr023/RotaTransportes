@@ -1,15 +1,21 @@
 <% provide(:title, 'Rotas') %>
 <h1>Todas as rotas</h1>
 
-<%= will_paginate %>
+
 
 <ul class="routes">
   <% @routes.each do |route| %>
     <li>
-      <%= link_to route.origem, route %>
+     <p><%= "Origem: #{route.origem} "%></p>
+     <p><%= "Destino: #{route.destino} "%></p>
+     <p><%= "Data: #{route.data} "%></p>
+
+      <%= link_to 'Selecionar', route %>
+      <p>_____________________________________________________________________________________________________________________________________________</p>
       
     </li>
   <% end %>
 </ul>
+<%= will_paginate %>
 
 
