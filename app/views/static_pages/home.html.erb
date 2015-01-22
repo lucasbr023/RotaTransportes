@@ -1,28 +1,214 @@
 
+<% if !logged_in? %>
+
+<!DOCTYPE html>
+<br>
+    <html lang="en">
+
+    <head>
+
+    <meta charset="utf-8">
+
+    <title>Rotas Community</title>
+
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css">
+
+    <link rel="stylesheet" type="text/css" href="css/custom.css">
+
+    <script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
+
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+    </head>
+
+    <body>
+
+        
+            <!-- Brand and toggle get grouped for better mobile display -->
+
+            
+
+        <div class="jumbotron">
+
+            <div class="container-fluid">
+
+                <h1>Learn to Create Websites</h1>
+
+                <p>In today's world internet is the most popular way of connecting with the people. At <a href="http://www.tutorialrepublic.com" target="_blank">tutorialrepublic.com</a> you will learn the essential of web development technologies along with real life practice example, so that you can create your own website to connect with the people around the world.</p>
+
+                <p><a href="http://www.tutorialrepublic.com" target="_blank" class="btn btn-success btn-lg">Get started today</a></p>
+
+            </div>
+
+        </div>
+
+        <div class="container-fluid">
+
+            <div class="row">
+
+                <div class="col-xs-4">
+
+                    <h2>HTML</h2>
+
+                    <p>HTML is a markup language that is used for creating web pages. The HTML tutorial section will help you understand the basics of HTML, so that you can create your own web pages or website.</p>
+
+                    <p><a href="http://www.tutorialrepublic.com/html-tutorial/" target="_blank" class="btn btn-success">Learn More &raquo;</a></p>
+
+                </div>
+
+                <div class="col-xs-4">
+
+                    <h2>CSS</h2>
+
+                    <p>CSS is used for describing the presentation of web pages. The CSS tutorial section will help you learn the essentials of CSS, so that you can fine control the style and layout of your HTML document.</p>
+
+                    <p><a href="http://www.tutorialrepublic.com/css-tutorial/" target="_blank" class="btn btn-success">Learn More &raquo;</a></p>
+
+                </div>
+
+                <div class="col-xs-4">
+
+                    <h2>Bootstrap</h2>
+
+                    <p>Bootstrap is a powerful front-end framework for faster and easier web development. The Bootstrap tutorial section will help you learn the techniques of Bootstrap so that you can quickly create your own website.</p>
+
+                    <p><a href="http://www.tutorialrepublic.com/twitter-bootstrap-tutorial/" target="_blank" class="btn btn-success">Learn More &raquo;</a></p>
+
+                </div>
+
+            </div>
+
+            <hr>
+
+            <div class="row">
+
+                <div class="col-xs-12">
+
+                    
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </body>
+
+    </html>
+
+<% end %>
+
+
 <% if logged_in? %>
 <br>
-testando
+<% if current_user.admin? %>
 
-<% else%>
-<!DOCTYPE html>
-<html>
-  <head>
-     <title><%= yield(:title) %> | Home | Rotas Community</title>
-  </head>
-  <body>
-      <br>
-      <br>
-      <br><br>
-    <h1>Rotas Community</h1>
-    <p>
-     <br>
-        <br>
-        Essa é a página incial do sistema Rotas.
-    </p>
-      <br>
-      
-  <%= link_to "Sign up now!", signup_path , class: "btn btn-lg btn-primary" %>
-</div>
-  </body>
-</html>
+
+
+testando
+<% elsif %>
+
+
+    <!DOCTYPE html>
+
+    <html lang="en">
+
+    <head>
+
+    <meta charset="utf-8">
+
+    <title>Rotas Community</title>
+
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css">
+
+    <link rel="stylesheet" type="text/css" href="css/custom.css">
+
+    <script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
+
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+    </head>
+
+    <body>
+
+        
+            <!-- Brand and toggle get grouped for better mobile display -->
+
+            
+
+        <div class="jumbotron">
+
+            <div class="container-fluid">
+
+                <h1>Learn to Create Websites</h1>
+
+                <p>In today's world internet is the most popular way of connecting with the people. At <a href="http://www.tutorialrepublic.com" target="_blank">tutorialrepublic.com</a> you will learn the essential of web development technologies along with real life practice example, so that you can create your own website to connect with the people around the world.</p>
+
+                <p><a href="http://www.tutorialrepublic.com" target="_blank" class="btn btn-success btn-lg">Get started today</a></p>
+
+            </div>
+
+        </div>
+
+        <div class="container-fluid">
+
+            <div class="row">
+
+                <div class="col-xs-4">
+
+                    <h2>HTML</h2>
+
+                    <p>HTML is a markup language that is used for creating web pages. The HTML tutorial section will help you understand the basics of HTML, so that you can create your own web pages or website.</p>
+
+                    <p><a href="http://www.tutorialrepublic.com/html-tutorial/" target="_blank" class="btn btn-success">Learn More &raquo;</a></p>
+
+                </div>
+
+                <div class="col-xs-4">
+
+                    <h2>CSS</h2>
+
+                    <p>CSS is used for describing the presentation of web pages. The CSS tutorial section will help you learn the essentials of CSS, so that you can fine control the style and layout of your HTML document.</p>
+
+                    <p><a href="http://www.tutorialrepublic.com/css-tutorial/" target="_blank" class="btn btn-success">Learn More &raquo;</a></p>
+
+                </div>
+
+                <div class="col-xs-4">
+
+                    <h2>Bootstrap</h2>
+
+                    <p>Bootstrap is a powerful front-end framework for faster and easier web development. The Bootstrap tutorial section will help you learn the techniques of Bootstrap so that you can quickly create your own website.</p>
+
+                    <p><a href="http://www.tutorialrepublic.com/twitter-bootstrap-tutorial/" target="_blank" class="btn btn-success">Learn More &raquo;</a></p>
+
+                </div>
+
+            </div>
+
+            <hr>
+
+            <div class="row">
+
+                <div class="col-xs-12">
+
+                   
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </body>
+
+    </html>
+
+
+<% end %>
+
 <% end %>
