@@ -16,6 +16,9 @@
             </a>
             <ul class="dropdown-menu">
               <li><%= link_to "Minhas Rotas", current_user %></li>
+              <% if current_user.admin? %>
+              <li><%= link_to "Adicionar Rota", new_route_path %></li>
+              <% end%>
               <li><%= link_to "Editar perfil", edit_user_path(current_user) %></li>
               <li class="divider"></li>
               <li>
