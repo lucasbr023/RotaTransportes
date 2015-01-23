@@ -6,7 +6,10 @@ Rails.application.routes.draw do
 
   get 'static_pages/home'
   get 'static_pages/seguir'
+  get 'users/todos'
+
 root 'static_pages#home'
+ 
 
   resources :routes
   

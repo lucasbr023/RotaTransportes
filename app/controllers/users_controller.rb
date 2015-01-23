@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :logged_in_user, only: [:index, :edit, :update]
+  before_action :logged_in_user, only: [:index, :edit, :update, :destroy]
   before_action :correct_user,   only: [:edit, :update]
 
     
@@ -26,11 +26,17 @@ class UsersController < ApplicationController
 
   # GET /users/1
   # GET /users/1.json
+
   def show
        @user = User.find(params[:id])
        @routes = @user.routes.paginate(page: params[:page])
 
   end
+
+  def todos
+      @user = User.all
+     
+    end
 
   # GET /users/new
   def new
@@ -82,11 +88,10 @@ class UsersController < ApplicationController
   # DELETE /users/1
   # DELETE /users/1.json
   def destroy
-    @user.destroy
-    respond_to do |format|
-      format.html { redirect_to users_url, notice: 'User was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    User.find(params[:id]).destroy
+    flash[:success] = "Usuario deletado"
+      redirect_to users_url
+          
   end
 
   private

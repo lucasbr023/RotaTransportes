@@ -30,8 +30,12 @@
             <p><%= "Tipo: #{route.tipo}"%></p>
             <p><%= "Data: #{route.data} "%></p>
             <p><%= "Observações: #{route.obs} "%></p>
-                          <p><%= "Carta-frete: #{route.frete} "%></p>
+            <p><%= "Carta-frete: #{route.frete} "%></p>
             <p><%= "Situação do Pagamento: #{route.pagamento} "%></p>
+
+            <% if current_user.admin? %>
+            <%= link_to 'Editar Rota', edit_route_path %>
+            <% end %>
               
             <p>_________________________________________________________________ </p>
           </li>
