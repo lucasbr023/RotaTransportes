@@ -39,9 +39,16 @@
      <% if current_user.admin? %>
 
      <%= select("route", "pagamento", ['Esperando','Pago']) %>
-     <% end %>
+     
+      <% end %>
   
-  
+      <% if current_user.admin? %>
+  <div class="field">
+    <%= f.label :frete %><br>
+    <%= f.text_field :frete, class: 'form-control' %>
+  </div>
+   <% end %>
+      
   <div class="actions">
     <%= f.submit %>
   <% end %>

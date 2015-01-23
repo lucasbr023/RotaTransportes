@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150122152358) do
+ActiveRecord::Schema.define(version: 20150123015259) do
 
   create_table "follows", force: :cascade do |t|
     t.string   "follower_type",   limit: 255
@@ -56,6 +56,7 @@ ActiveRecord::Schema.define(version: 20150122152358) do
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
     t.string   "pagamento",  limit: 255
+    t.string   "frete",      limit: 255
   end
 
   add_index "routes", ["user_id"], name: "index_routes_on_user_id", using: :btree

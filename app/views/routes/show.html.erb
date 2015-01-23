@@ -25,6 +25,11 @@
   <%= @route.obs %>
 </p>
 
+<p>
+  <strong>Carta-Frete:</strong>
+  <%= @route.frete %>
+</p>
+
 <%= link_to 'Seguir esta rota', static_pages_seguir_path(:route => @route.id) %> 
 
 

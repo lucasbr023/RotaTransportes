@@ -9,6 +9,7 @@
      <p><%= "Origem: #{route.origem} "%></p>
      <p><%= "Destino: #{route.destino} "%></p>
      <p><%= "Data: #{route.data} "%></p>
+     <p><%= "Carta-frete: #{route.frete} "%></p>
      <% if logged_in? %>
       <%= link_to 'Selecionar', route %>
       <% end %>

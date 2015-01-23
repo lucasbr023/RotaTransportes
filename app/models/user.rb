@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
 
 
     has_many :routes
-      acts_as_follower
+     
     validates :name, presence: true
     validates_presence_of :name, :email
       
