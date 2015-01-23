@@ -7,7 +7,7 @@ class RoutesController < ApplicationController
     
     def index
       @routes = Route.paginate(page: params[:page])
-      @users = @Route.user_id 
+       
   end
 
   # GET /routes/1
