@@ -81,6 +81,5 @@
             routes_path, :class => 'btn btn-default' %>
 
 </div>
-</div>
 <% end %>
 

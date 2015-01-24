@@ -1,42 +1,32 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = Route -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:origem) %>:</strong></dt>
+  <dd><%= @route.origem %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:destino) %>:</strong></dt>
+  <dd><%= @route.destino %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:data) %>:</strong></dt>
+  <dd><%= @route.data %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:tipo) %>:</strong></dt>
+  <dd><%= @route.tipo %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:obs) %>:</strong></dt>
+  <dd><%= @route.obs %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:user_id) %>:</strong></dt>
+  <dd><%= @route.user_id %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:pagamento) %>:</strong></dt>
+  <dd><%= @route.pagamento %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:frete) %>:</strong></dt>
+  <dd><%= @route.frete %></dd>
+</dl>
+
+<%= link_to t('.back', :default => t("helpers.links.back")),
+              routes_path, :class => 'btn btn-default'  %>
 
 
-<p>
-  <strong>Origem:</strong>
-  <%= @route.origem %>
-</p>
+        <% if logged_in? %>
 
-<p>
-  <strong>Destino:</strong>
-  <%= @route.destino %>
-</p>
-
-<p>
-  <strong>Data:</strong>
-  <%= @route.data %>
-</p>
-
-<p>
-  <strong>Tipo:</strong>
-  <%= @route.tipo %>
-</p>
-
-<p>
-  <strong>Observaçoes:</strong>
-  <%= @route.obs %>
-</p>
-
-<p>
-  <strong>Carta-Frete:</strong>
-  <%= @route.frete %>
-</p>
-
-<%= link_to 'Seguir esta rota', static_pages_seguir_path(:route => @route.id) %> 
-
-
-<% if current_user.admin? %>
-<%= link_to 'Edit', edit_route_path(@route) %> |
+                <%= link_to "Seguir esta Rota", static_pages_seguir_path(:route => @route.id), class: "btn btn-primary btn-sm" %>
 <% end %>
-
-
-<%= link_to 'Back', routes_path %>

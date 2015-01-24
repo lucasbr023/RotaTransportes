@@ -1,41 +1,55 @@
-
- 
- <% provide(:title, 'Users') %>
-<h1>Todas os usuários</h1>
-
-
-
-
-  <thead>
+<%- model_class = User -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+</div>
 <table class="table table-striped">
+  <thead>
     <tr>
-
-<ul class="routes">
- <li>
-      <th>Name</th>
-      
-      <th colspan="3"></th>
-
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:name) %></th>
+      <th><%= model_class.human_attribute_name(:email) %></th>
+      <th><%= model_class.human_attribute_name(:cpf) %></th>
+      <th><%= model_class.human_attribute_name(:cidade) %></th>
+      <th><%= model_class.human_attribute_name(:telefone) %></th>
+      <th><%= model_class.human_attribute_name(:endereco) %></th>
+      <th><%= model_class.human_attribute_name(:rg) %></th>
+      <th><%= model_class.human_attribute_name(:cnh) %></th>
+      <th><%= model_class.human_attribute_name(:password) %></th>
+      <th><%= model_class.human_attribute_name(:admin) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
-
   <tbody>
     <% @users.each do |user| %>
       <tr>
+        <td><%= link_to user.id, user_path(user) %></td>
         <td><%= user.name %></td>
-        
-        <td><%= link_to 'Show', user %></td>
-        <td><%= link_to 'Edit', edit_user_path(user) %></td>
-         <% if current_user.admin? %>
-        <!-- <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
-        <% end %>
-      </tr>
+        <td><%= user.email %></td>
+        <td><%= user.cpf %></td>
+        <td><%= user.cidade %></td>
+        <td><%= user.telefone %></td>
+        <td><%= user.endereco %></td>
+        <td><%= user.rg %></td>
+        <td><%= user.cnh %></td>
+        <td><%= user.password %></td>
+        <td><%= user.admin %></td>
+        <td><%=l user.created_at %></td>
+        <td>
 
-      </li>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_user_path(user), :class => 'btn btn-default btn-xs' %>
+
+                      <%= link_to "Visualizar", user_path(user), class: "btn btn-primary btn-sm" %>
+
+
+           
+        </td>
+      </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-  <%= button_to('Sign Up', new_user_path, :class => 'btn btn-default')  %>
-
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_user_path,
+            :class => 'btn btn-primary' %>
