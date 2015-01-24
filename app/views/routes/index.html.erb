@@ -11,8 +11,10 @@
      <p><%= "Data: #{route.data} "%></p>
      
      <% if logged_in? %>
-      <%= link_to 'Selecionar', route %>
-      <% end %>
+        
+ 
+        <%= link_to "Selecionar", route, class: "btn btn-primary btn-sm" %>
+  <% end %>
       <p>_____________________________________________________________________________________________________________________________________________</p>
       
     </li>
