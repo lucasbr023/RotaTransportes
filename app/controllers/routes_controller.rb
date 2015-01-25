@@ -6,7 +6,14 @@ class RoutesController < ApplicationController
   
     
     def index
-      @routes = Route.paginate(page: params[:page])
+
+         if params[:search]
+          @routes = Route.search(params[:search]).paginate(page: params[:page]) 
+          else
+          @routes = Route.all.paginate(page: params[:page])  
+        end
+
+     
        
   end
 
@@ -14,6 +21,9 @@ class RoutesController < ApplicationController
   # GET /routes/1.json
   def show
     
+  end
+
+  def search
   end
 
   # GET /routes/new
