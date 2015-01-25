@@ -34,7 +34,7 @@
   <div class="control-group">
     <%= f.label :data, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :data, :class => 'form-control' %>
+      <%= f.date_select :data, :class => 'form-control' %>
     </div>
     <%= error_span(@route[:data]) %>
   </div>
@@ -52,17 +52,14 @@
     </div>
     <%= error_span(@route[:obs]) %>
   </div>
-  <div class="control-group">
-    <%= f.label :user_id, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :user_id, :class => 'form-control' %>
-    </div>
-    <%= error_span(@route[:user_id]) %>
-  </div>
+  
   <div class="control-group">
     <%= f.label :pagamento, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :pagamento, :class => 'form-control' %>
+      <% if current_user.admin? %>
+
+<%= select("route", "pagamento", ['Esperando','Pago'], {include_blank: "Situação do pagamento"}) %>
+<% end %>
     </div>
     <%= error_span(@route[:pagamento]) %>
   </div>

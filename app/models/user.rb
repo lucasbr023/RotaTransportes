@@ -5,9 +5,9 @@ class User < ActiveRecord::Base
 
 
     has_many :routes
-     
-    validates :name, presence: true
-    validates_presence_of :name, :email
+
+    validates_presence_of :name, :email, :cpf, :cnh
+    validates :cpf, length: { is: 11 }
       
     validates_format_of :email, with: EMAIL_REGEXP
     

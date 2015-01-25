@@ -71,7 +71,7 @@ class RoutesController < ApplicationController
   
 
   # DELETE /routes/1
-  # DELETE /routes/1.json
+  # DELETE /routes/1.json3
   def destroy
     @route.destroy
     respond_to do |format|
