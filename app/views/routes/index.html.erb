@@ -11,8 +11,11 @@
       <th><%= model_class.human_attribute_name(:data) %></th>
       <th><%= model_class.human_attribute_name(:tipo) %></th>
       <th><%= model_class.human_attribute_name(:obs) %></th>
+      <% if logged_in? %>
       <th><%= model_class.human_attribute_name(:pagamento) %></th>
       <th><%= model_class.human_attribute_name(:frete) %></th>
+      <% end %>
+
        <% if logged_in? %>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
       <% end %>
@@ -27,8 +30,10 @@
         <td><%= route.data %></td>
         <td><%= route.tipo %></td>
         <td><%= route.obs %></td>
+        <% if logged_in? %>
         <td><%= route.pagamento %></td>
         <td><%= route.frete %></td>
+        <% end %>
         <td>
           <% if logged_in? && !current_user.admin?%>
         
@@ -55,9 +60,10 @@
 <%= will_paginate %>
 <br>
 <br>
-
+<% if logged_in? && current_user.admin?%>  
 <%= link_to t('.new', :default => t("helpers.links.new")),
             new_route_path,
             :class => 'btn btn-primary' %>
+            <% end %>
 
 
