@@ -4,6 +4,7 @@
 </div>
 <table class="table table-striped">
   <thead>
+  
     <tr>
       <th><%= model_class.human_attribute_name(:id) %></th>
       <th><%= model_class.human_attribute_name(:origem) %></th>
@@ -56,6 +57,7 @@
       </tr>
     <% end %>
   </tbody>
+
 </table>
 <%= will_paginate %>
 <br>
