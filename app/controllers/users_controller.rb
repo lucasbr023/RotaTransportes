@@ -6,7 +6,7 @@
  def logged_in_user
       unless logged_in?
         store_location
-        flash[:danger] = "Please log in."
+        flash[:danger] = "Por favor efetue o login."
         redirect_to login_url
       end
      end
@@ -58,9 +58,9 @@
       if @user.save
                 log_in @user
 
-            flash[:success] = "Welcome to the Sample App!"
+            flash[:success] = "Bem-vindo ao Rotas Community!"
             
-          format.html { redirect_to @user, notice: 'User was successfully created.' }
+          format.html { redirect_to @user }
         format.json { render :show, status: :created, location: @user }
       else
         format.html { render :new }
@@ -74,7 +74,8 @@
   def update
     respond_to do |format|
       if @user.update(user_params)
-        format.html { redirect_to @user, notice: 'User was successfully updated.' }
+          
+        format.html { redirect_to @user }
            flash[:success] = "Profile updated"
       redirect_to @user
         format.json { render :show, status: :ok, location: @user }
@@ -89,7 +90,7 @@
   # DELETE /users/1.json
   def destroy
     User.find(params[:id]).destroy
-    flash[:success] = "Usuario deletado"
+    flash[:success] = "Usuário deletado"
       redirect_to users_url
           
   end

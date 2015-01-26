@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
 
     validates_presence_of :name, :email, :cpf, :cnh, :telefone, :cidade, :endereco, :rg
     validates :cpf, length: { is: 11 }
-      
+      validates_uniqueness_of :cpf, :rg  
     validates_format_of :email, with: EMAIL_REGEXP
     
     has_secure_password

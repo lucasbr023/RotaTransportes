@@ -43,9 +43,8 @@
                 <br>
 
 <div class="btn-group" role="group" aria-label="...">
-               
-                     <button_to type="button" class="btn btn-default" style="text-align: center" ></button>
-                       <%= link_to 'Cadastre-se no sistema', new_user_path %>
+               <%= link_to t('.Cadastre-se no sistema', :default => t("helpers.links.Cadastre-se no sistema")),new_user_path, :class => 'btn btn-default btn' %>
+
                 </div>
                 </div>
                
@@ -70,8 +69,8 @@
 
                 <div class="btn-group" role="group" aria-label="...">
                
-                     <button_to type="button" class="btn btn-default" style="text-align: center" ></button>
-                       <%= link_to 'Quem somos', static_pages_quemsomos_path %>
+                    <%= link_to t('.Quem Somos', :default => t("helpers.links.Quem somos")),static_pages_quemsomos_path, :class => 'btn btn-default btn' %>
+                    
                 </div>
                 </div>
 
@@ -87,9 +86,9 @@
                 <br>
 
                 <div class="btn-group" role="group" aria-label="...">
-               
-                     <button_to type="button" class="btn btn-default" style="text-align: center" ></button>
-                       <%= link_to 'Rotas disponiveis', routes_path %>
+
+                     <%= link_to t('.Rotas disponiveis', :default => t("helpers.links.Rotas disponiveis")),routes_path, :class => 'btn btn-default btn' %>
+                    
                 </div>
                 </div>
                
@@ -101,15 +100,14 @@
 
                     <h2>Pesquisa por Frete</h2>
 
-                    <p>Bootstrap is a powerful front-end framework for faster and easier web development. The Bootstrap tutorial section will help you learn the techniques of Bootstrap so that you can quickly create your own website.</p>
+                    <p>Consulte aqui sua carta-frete.</p>
 
                     <div align="center"> 
-                <br>
-
-               <%= form_tag(routes_path, :method => "get", id: "search-form") do %>
-                  <%= text_field_tag :search, params[:search], placeholder: "Pesquisa por frete"%>
-                        <%= submit_tag "Search", :name => nil %>   
-<% end %>   
+             <%= form_tag(routes_path, :method => "get", id: "search-form") do %>
+                 <%= search_field_tag :search, params[:search], placeholder: 'Carta-frete',
+      size: 40, class: 'form-control' %> 
+                        <%= submit_tag "Pesquisar", name: nil, class: 'btn btn-default' %>
+                        <% end %>   
                 </div>
 </div>
 
@@ -144,6 +142,7 @@
 
   <%= link_to 'Todos os usuarios', users_path %>
 
+<%= render template: 'users/index' %>
 
 <% elsif %>
 
@@ -191,8 +190,8 @@
 
 <div class="btn-group" role="group" aria-label="...">
                
-                     <button_to type="button" class="btn btn-default" style="text-align: center" ></button>
-                       <%= link_to 'Cadastre-se no sistema', new_user_path %>
+                     <%= link_to t('.Cadastre-se no sistema', :default => t("helpers.links.Cadastre-se no sistema")),new_user_path, :class => 'btn btn-default btn' %>  
+  
                 </div>
                 </div>
                
@@ -216,9 +215,8 @@
                 <br>
 
                 <div class="btn-group" role="group" aria-label="...">
-               
-                     <button_to type="button" class="btn btn-default" style="text-align: center" ></button>
-                       <%= link_to 'Quem somos', static_pages_quemsomos_path %>
+                <%= link_to t('.Quem Somos', :default => t("helpers.links.Quem somos")),static_pages_quemsomos_path, :class => 'btn btn-default btn' %>
+                    
                 </div>
                 </div>
 
@@ -235,8 +233,7 @@
 
                 <div class="btn-group" role="group" aria-label="...">
                
-                     <button_to type="button" class="btn btn-default" style="text-align: center" ></button>
-                       <%= link_to 'Rotas disponiveis', routes_path %>
+                     <%= link_to t('.Rotas disponiveis', :default => t("helpers.links.Rotas disponiveis")),routes_path, :class => 'btn btn-default btn' %>
                 </div>
                 </div>
                
@@ -248,16 +245,18 @@
 
                       <h2>Pesquisa por Frete</h2>
 
-                    <p>Bootstrap is a powerful front-end framework for faster and easier web development. The Bootstrap tutorial section will help you learn the techniques of Bootstrap so that you can quickly create your own website.</p>
+                    <p>Consulte aqui sua carta-frete.</p>
 
                     <div align="center"> 
                 <br>
 
-               <%= form_tag(routes_path, :method => "get", id: "search-form") do %>
-                  <%= text_field_tag :search, params[:search], placeholder: "Pesquisa por frete"%>
-                        <%= submit_tag "Search", :name => nil %>   
-<% end %>   
-                </div>
+            <%= form_tag(routes_path, :method => "get", id: "search-form") do %>
+                    <%= search_field_tag :search, params[:search], placeholder: 'Search for something',
+      size: 40, class: 'form-control' %> 
+                        <%= submit_tag "Search", name: nil, class: 'btn btn-default' %>
+            <% end %>               
+                    
+                    </div>
                 </div>
                 </div>
 

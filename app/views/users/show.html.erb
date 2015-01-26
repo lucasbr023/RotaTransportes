@@ -1,7 +1,4 @@
 <br>
-<br>
-<br>
-<br>
 <% provide(:title, @user.name) %>
   <div class="row">
   <aside class="col-md-4">
@@ -33,15 +30,16 @@
             <p><%= "Observações: #{route.obs} "%></p>
             <p><%= "Carta-frete: #{route.frete} "%></p>
             <p><%= "Situação do Pagamento: #{route.pagamento} "%></p>
-
+            </li>
+            
             <% if current_user.admin? %>
            
 
             <%= link_to t('Editar Rota', :default => t("helpers.links.Editar Rota")),
               edit_route_path, :class => 'btn btn-default' %>
             <% end %>
-            </ul>  
-                      </li>
+              
+                     
 
             <p>_________________________________________________________________ </p>
             
@@ -55,7 +53,7 @@
 
 
 </div>
-
+</ul>
 
 <%= link_to t('.Editar Perfil', :default => t("helpers.links.Editar Perfil")),
               edit_user_path(@user), :class => 'btn btn-default' %>

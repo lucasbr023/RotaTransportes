@@ -1,6 +1,6 @@
 <%- model_class = Route -%>
 <div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+  <h1>Todas as Rotas</h1>
 </div>
 <table class="table table-striped">
   <thead>
@@ -44,12 +44,12 @@
         <% end %>
 
         <% if logged_in? && current_user.admin?%>  
-          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+          <%= link_to t('.editar', :default => t("helpers.links.editar")),
                       edit_route_path(route), :class => 'btn btn-default btn-xs' %>
           <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
                       route_path(route),
                       :method => :delete,
-                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Tem certeza?')) },
                       :class => 'btn btn-xs btn-danger' %>
 
                       <% end %>
@@ -63,7 +63,7 @@
 <br>
 <br>
 <% if logged_in? && current_user.admin?%>  
-<%= link_to t('.new', :default => t("helpers.links.new")),
+<%= link_to t('.Nova Rota', :default => t("helpers.links.Nova Rota")),
             new_route_path,
             :class => 'btn btn-primary' %>
             <% end %>

@@ -18,7 +18,7 @@
   <div class="col-md-6 col-md-offset-3">
 
   <div class="control-group">
-    <%= f.label :origem, :class => 'control-label' %>
+    <%= f.label :Origem, :class => 'control-label' %>
     <div class="controls">
       <%= f.text_field :origem, :class => 'form-control' %>
     </div>
@@ -39,22 +39,22 @@
     <%= error_span(@route[:data]) %>
   </div>
   <div class="control-group">
-    <%= f.label :tipo, :class => 'control-label' %>
+    <%= f.label :Tipo_caminhão, :class => 'control-label' %>
     <div class="controls">
       <%= f.text_field :tipo, :class => 'form-control' %>
     </div>
     <%= error_span(@route[:tipo]) %>
   </div>
   <div class="control-group">
-    <%= f.label :obs, :class => 'control-label' %>
+    <%= f.label :Observações, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :obs, :class => 'form-control' %>
+      <%= f.text_area :obs, :class => 'form-control' %>
     </div>
     <%= error_span(@route[:obs]) %>
   </div>
   
   <div class="control-group">
-    <%= f.label :pagamento, :class => 'control-label' %>
+    <%= f.label :Status_pagamento, :class => 'control-label' %>
     <div class="controls">
       <% if current_user.admin? %>
 
@@ -64,7 +64,7 @@
     <%= error_span(@route[:pagamento]) %>
   </div>
   <div class="control-group">
-    <%= f.label :frete, :class => 'control-label' %>
+    <%= f.label :Carta_frete, :class => 'control-label' %>
     <div class="controls">
       <%= f.text_field :frete, :class => 'form-control' %>
     </div>
@@ -73,11 +73,12 @@
 
 
 
-  <%= f.submit nil, :class => 'btn btn-primary' %>
-  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+  <%= f.submit nil, :class => 'btn btn-primary' %></div>
+</div>
+
+  <%= link_to t('.cancelar', :default => t("helpers.links.cancelar")),
             routes_path, :class => 'btn btn-default' %>
 
-</div>
-</div>
+
 <% end %>
 
