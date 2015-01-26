@@ -76,7 +76,7 @@
       if @user.update(user_params)
           
         format.html { redirect_to @user }
-           flash[:success] = "Profile updated"
+           flash[:success] = "Dados atualizados"
       redirect_to @user
         format.json { render :show, status: :ok, location: @user }
       else
