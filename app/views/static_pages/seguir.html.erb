@@ -2,11 +2,6 @@
   <% @route.update_column(:user_id, current_user.id) %>
   <% @route.save %>
 
+<%= render template: 'users/show' %>
 
-<br>
-<br>
-  Rota Selecionada
-<br>
-  <%= link_to "Voltar", routes_path, class: "btn btn-primary btn-sm" %>
-   
 <% end %>  
