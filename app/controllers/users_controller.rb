@@ -77,8 +77,8 @@
           
         format.html { redirect_to @user }
            flash[:success] = "Dados atualizados"
-      redirect_to @user
-        format.json { render :show, status: :ok, location: @user }
+      
+              format.json { render :show, status: :ok, location: @user }
       else
         format.html { render :edit }
         format.json { render json: @user.errors, status: :unprocessable_entity }
