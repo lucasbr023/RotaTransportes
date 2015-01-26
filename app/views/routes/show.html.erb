@@ -25,6 +25,12 @@
 <%= link_to t('.Voltar', :default => t("helpers.links.Voltar")),
               routes_path, :class => 'btn btn-default'  %>
 
+  <% if logged_in? && current_user.admin? %>
+<%= link_to t('.editar', :default => t("helpers.links.editar")),
+edit_route_path(@route), :class => 'btn btn-default' %>
+
+<% end %>
+
 
         <% if logged_in? %>
 
