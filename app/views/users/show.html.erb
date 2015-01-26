@@ -12,7 +12,7 @@
         <div class="col-md-8">
 
 <h3>Minhas rotas </h3>
-      <p>_________________________________________________________________</p>
+     
       
 <% if @user.routes.any? %>
 
@@ -23,6 +23,7 @@
           <% @user.routes.each do |route| %>
     
           <li>
+            <p><%= "Id: #{route.id}" %></p>
             <p><%= "Origem: #{route.origem} "%></p>
             <p><%= "Destino: #{route.destino} "%></p>
             <p><%= "Tipo: #{route.tipo}"%></p>
@@ -41,7 +42,7 @@
               
                      
 
-            <p>_________________________________________________________________ </p>
+          
             
             
 

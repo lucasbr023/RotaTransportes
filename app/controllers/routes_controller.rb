@@ -33,6 +33,7 @@ class RoutesController < ApplicationController
 
   # GET /routes/1/edit
   def edit
+     @route = Route.find(params[:id])
   end
 
   # POST /routes
