@@ -98,11 +98,12 @@
     </div>
     <%= error_span(@user[:admin]) %>
   </div>
-<%= f.submit nil, :class => 'btn btn-primary' %>
+      <% end %>
+      <%= f.submit nil, :class => 'btn btn-primary' %>
 
   </div>
   </div>  
-      <% end %>
+
 
   <%= link_to t('.cancelar', :default => t("helpers.links.cancelar")),
             users_path, :class => 'btn btn-default' %>
