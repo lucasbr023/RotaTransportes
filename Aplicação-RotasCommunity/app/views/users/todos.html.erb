@@ -1,0 +1,16 @@
+<% provide(:title, 'Users') %>
+<h1>Todas os usuários</h1>
+
+
+
+<ul class="routes">
+  <%  @user.each do |user| %>
+    <li>
+    <p><%= "Nome: #{user.name} "%></p>
+
+    <%= link_to 'Editar', users_path %>
+   
+    </li>
+  <% end %>
+</ul>
+

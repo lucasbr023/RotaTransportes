@@ -1,0 +1,84 @@
+<%= form_for @route, :html => { :class => "form-horizontal route" } do |f| %>
+
+    <% if @route.errors.any? %>
+    <div id="error_expl" class="panel panel-danger">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= pluralize(@route.errors.count, "error") %> prohibited this route from being saved:</h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+        <% @route.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+
+  <div class="control-group">
+    <%= f.label :Origem, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :origem, :class => 'form-control' %>
+    </div>
+    <%= error_span(@route[:origem]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :destino, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :destino, :class => 'form-control' %>
+    </div>
+    <%= error_span(@route[:destino]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :data, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.date_select :data, :class => 'form-control' %>
+    </div>
+    <%= error_span(@route[:data]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :Tipo_caminhão, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :tipo, :class => 'form-control' %>
+    </div>
+    <%= error_span(@route[:tipo]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :Observações, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_area :obs, :class => 'form-control' %>
+    </div>
+    <%= error_span(@route[:obs]) %>
+  </div>
+  
+  <div class="control-group">
+    <%= f.label :Status_pagamento, :class => 'control-label' %>
+    <div class="controls">
+      <% if current_user.admin? %>
+
+<%= select("route", "pagamento", ['Esperando','Pago'], {include_blank: "Situação do pagamento"}) %>
+<% end %>
+    </div>
+    <%= error_span(@route[:pagamento]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :Carta_frete, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :frete, :class => 'form-control' %>
+    </div>
+    <%= error_span(@route[:frete]) %>
+  </div>
+
+
+
+  <%= f.submit nil, :class => 'btn btn-primary' %></div>
+</div>
+
+  <%= link_to t('.cancelar', :default => t("helpers.links.cancelar")),
+            routes_path, :class => 'btn btn-default' %>
+
+
+<% end %>
+

@@ -1,0 +1,38 @@
+<%- model_class = Route -%>
+<div class="page-header">
+  <h1> Rota </h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:origem) %>:</strong></dt>
+  <dd><%= @route.origem %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:destino) %>:</strong></dt>
+  <dd><%= @route.destino %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:data) %>:</strong></dt>
+  <dd><%= @route.data %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:tipo) %>:</strong></dt>
+  <dd><%= @route.tipo %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:obs) %>:</strong></dt>
+  <dd><%= @route.obs %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:user_id) %>:</strong></dt>
+  <dd><%= @route.user_id %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:pagamento) %>:</strong></dt>
+  <dd><%= @route.pagamento %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:frete) %>:</strong></dt>
+  <dd><%= @route.frete %></dd>
+</dl>
+
+<%= link_to t('.Voltar', :default => t("helpers.links.Voltar")),
+              routes_path, :class => 'btn btn-default'  %>
+
+  <% if logged_in? && current_user.admin? %>
+<%= link_to t('.editar', :default => t("helpers.links.editar")),
+edit_route_path(@route), :class => 'btn btn-default' %>
+
+<% end %>
+
+
+        <% if logged_in? %>
+
+                <%= link_to "Seguir esta Rota", static_pages_seguir_path(:route => @route.id), class: "btn btn-primary btn-sm" %>
+<% end %>

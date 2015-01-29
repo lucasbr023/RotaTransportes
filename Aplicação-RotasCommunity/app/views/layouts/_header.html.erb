@@ -1,0 +1,49 @@
+<header class="navbar navbar-fixed-top navbar-inverse">
+  <div class="container">
+      
+   <div class="navbar-header">
+      <a class="navbar-brand", href="http://localhost:3000/">
+<img alt="teste" src="https://uploaddeimagens.com.br/images/000/434/941/original/Logo_Rotas02.png?1422122825" width="205" height="53" class="img-rounded" />
+
+                <link href="/assets/custom.css.scss?body=1" media="screen" rel="stylesheet" />
+
+      </a>
+    </div>
+
+                
+    <nav>
+    
+    <br>
+
+      <ul class="nav navbar-nav navbar-right">
+                    <li><%= link_to "Home", root_path %></li>
+
+        
+        <li><%= link_to "Rotas", routes_path %></li>
+      
+          <% if logged_in? %>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              Perfil <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+              <li><%= link_to "Minhas Rotas", current_user %></li>
+              <% if current_user.admin? %>
+              <li><%= link_to "Adicionar Rota", new_route_path %></li>
+              <% end%>
+              <li><%= link_to "Editar perfil", edit_user_path(current_user) %></li>
+              <li class="divider"></li>
+              <li>
+                <%= link_to "Log out", logout_path, method: "delete" %>
+              </li>
+            </ul>
+          </li>
+        <% else %>
+        
+          <li><%= link_to "Log in", login_path %></li>
+        <% end %>
+      </ul>
+    </nav>
+  </div>
+  
+</header>
