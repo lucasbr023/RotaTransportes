@@ -13,6 +13,6 @@ class StaticPagesController < ApplicationController
   def seguir
     @route = Route.find(params[:route])
     flash[:success] = "Rota selecionada"
-    redirect_to(root_url)
+    
   end	
 end
